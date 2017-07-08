@@ -1,0 +1,49 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html" />
+<link rel="import" href="../../bower_components/app-route/app-location.html" />
+<link rel="import" href="../../bower_components/app-route/app-route.html" />
+<link rel="import" href="../../bower_components/iron-pages/iron-pages.html" />
+<link rel="import" href="../demo-page1/demo-page1.html" />
+<link rel="import" href="../demo-page2/demo-page2.html" />
+<link rel="import" href="../demo-page3/demo-page3.html" />
+
+<dom-module id="demo-app">
+    <template>
+        <style>
+            nav {
+                margin-bottom: 1em;
+            }
+        </style>
+
+        <h1>Polymer App Routing Demo</h1>
+
+        <app-location route="{{route}}"></app-location>
+        <app-route
+                route="{{route}}"
+                pattern="/app-route-demo/:view"
+                data="{{routeData}}"
+                tail="{{subroute}}"></app-route>
+        <p>
+            route.path=[[route.path]], routeData.view=[[routeData.view]], subroute.path=[[subroute.path]]
+        </p>
+
+        <nav>
+            <a href="/app-route-demo/">Home</a> |
+            <a href="/app-route-demo/one">Page 1</a> |
+            <a href="/app-route-demo/two">Page 2</a> |
+            <a href="/app-route-demo/three">Page 3</a>
+        </nav>
+
+        <iron-pages selected="[[routeData.view]]" attr-for-selected="name">
+            <demo-page1 name="one" route="{{subroute}}"></demo-page1>
+            <demo-page2 name="two" route="{{subroute}}"></demo-page2>
+            <demo-page3 name="three" route="{{subroute}}"></demo-page3>
+            <div name="">Home Page Content</div>
+        </iron-pages>
+    </template>
+
+    <script>
+        Polymer({
+            is: 'demo-app'
+        });
+    </script>
+</dom-module>

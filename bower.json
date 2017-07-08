@@ -1,0 +1,22 @@
+{
+  "name": "app-route-demo",
+  "homepage": "https://github.com/McPringle/app-route-demo/",
+  "description": "Demo application for the Polymer app-route component.",
+  "main": "index.html",
+  "moduleType": [],
+  "private": true,
+  "license": "AGPL",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/main/webapp",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^2.0.1",
+    "app-route": "PolymerElements/app-route#^2.0.0",
+    "iron-pages": "PolymerElements/iron-pages#^2.0.0"
+  }
+}

@@ -1,0 +1,40 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html" />
+
+<dom-module id="demo-page3">
+    <template>
+        <style>
+            nav {
+                margin-bottom: 1em;
+            }
+        </style>
+
+        <p>
+            route.path=[[route.path]], routeData.view=[[routeData.view]], subroute.path=[[subroute.path]]
+        </p>
+
+        <nav>
+            <a href="/">Default</a> |
+            <a href="/a">Part A</a> |
+            <a href="/b">Part B</a> |
+            <a href="/c">Part C</a>
+        </nav>
+
+        <iron-pages selected="[[routeData.view]]" attr-for-selected="name">
+            <div name="a">Content of Part A</div>
+            <div name="b">Content of Part B</div>
+            <div name="c">Content of Part C</div>
+            <div name="">Default Content</div>
+        </iron-pages>
+    </template>
+
+    <script>
+        Polymer({
+            is: 'demo-page3',
+            properties: {
+                route: {
+                    type: Object
+                }
+            }
+        });
+    </script>
+</dom-module>
